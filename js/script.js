@@ -1,7 +1,4 @@
-// Simple JavaScript for Sweet Treats Bakery
-// Basic functions that a first-year student would understand
-
-// Simple form validation
+// form validation
 function validateForm() {
     var inputs = document.querySelectorAll('input[required]');
     for (var i = 0; i < inputs.length; i++) {
