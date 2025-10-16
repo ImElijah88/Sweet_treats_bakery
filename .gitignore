@@ -1,19 +1,28 @@
-# Ignore config with database credentials
+# Database credentials
 config.php
 
-# Ignore uploaded files
-uploads/*
-!uploads/.gitkeep
+# User uploaded files
+uploads/
 
-# Ignore temporary files
+# Development notes (not for school)
+credentials.txt
+BUGS_AND_IMPROVEMENTS.md
+gemini.md
+UPDATES.md
+test_cases.txt
+
+# Backup folder
+../sweet_treats_website copy/
+
+# Temporary files
 *.tmp
 *.log
 
-# Ignore OS files
+# OS files
 .DS_Store
 Thumbs.db
 
-# Ignore IDE files
+# IDE files
 .vscode/
 .idea/
 *.swp
