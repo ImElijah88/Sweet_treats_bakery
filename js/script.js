@@ -1,4 +1,3 @@
-// Show/hide password
 function togglePassword(fieldId) {
   var passwordField = document.getElementById(fieldId);
   if (passwordField) {
@@ -10,7 +9,6 @@ function togglePassword(fieldId) {
   }
 }
 
-// Toggle reply form visibility
 function toggleReplyForm(formId) {
   var form = document.getElementById("replyForm_" + formId);
   if (form) {
@@ -22,7 +20,6 @@ function toggleReplyForm(formId) {
   }
 }
 
-// Add emoji to textarea
 function addEmoji(element, formId) {
   var emoji = element.textContent;
   var form = document.getElementById("replyForm_" + formId);
@@ -34,8 +31,6 @@ function addEmoji(element, formId) {
     }
   }
 }
-
-// Hide success/error messages after 5 seconds
 window.onload = function () {
   var messages = document.querySelectorAll(".success, .error");
   for (var i = 0; i < messages.length; i++) {
@@ -49,32 +44,26 @@ window.onload = function () {
     );
   }
 
-  // Create theme toggle button
   var themeToggle = document.createElement("div");
   themeToggle.className = "theme-toggle";
   themeToggle.innerHTML = '<span class="theme-icon">🌙</span>';
   document.body.appendChild(themeToggle);
 
-  // Create hamburger menu
   var hamburger = document.createElement("div");
   hamburger.className = "hamburger";
   hamburger.innerHTML = "<span></span><span></span><span></span>";
   document.body.appendChild(hamburger);
 
-  // Create mobile navigation
   var mobileNav = document.createElement("div");
   mobileNav.className = "mobile-nav";
 
-  // Create overlay
   var overlay = document.createElement("div");
   overlay.className = "nav-overlay";
   document.body.appendChild(overlay);
 
-  // Get user status
   var isAdmin = document.body.getAttribute("data-is-admin") === "true";
   var isLoggedIn = document.body.getAttribute("data-logged-in") === "true";
 
-  // Create navigation based on user type
   var navItems = "";
   if (isAdmin) {
     navItems =
@@ -90,12 +79,9 @@ window.onload = function () {
   mobileNav.innerHTML = navItems;
   document.body.appendChild(mobileNav);
 
-  // Create menu activation zone
   var menuZone = document.createElement("div");
   menuZone.className = "menu-activation-zone";
   document.body.appendChild(menuZone);
-
-  // Menu zone hover events
   menuZone.addEventListener("mouseenter", function () {
     mobileNav.classList.add("active");
     overlay.classList.add("active");
@@ -106,14 +92,12 @@ window.onload = function () {
     overlay.classList.remove("active");
   });
 
-  // Hamburger menu toggle
   hamburger.addEventListener("click", function () {
     hamburger.classList.toggle("active");
     mobileNav.classList.toggle("active");
     overlay.classList.toggle("active");
   });
 
-  // Close menu when overlay is clicked
   overlay.addEventListener("click", function () {
     hamburger.classList.remove("active");
     mobileNav.classList.remove("active");
@@ -125,7 +109,6 @@ window.onload = function () {
     overlay.classList.remove("active");
   });
 
-  // Close menu when a link is clicked
   mobileNav.addEventListener("click", function (e) {
     if (e.target.tagName === "A") {
       hamburger.classList.remove("active");
@@ -133,8 +116,6 @@ window.onload = function () {
       overlay.classList.remove("active");
     }
   });
-
-  // Theme toggle functionality
   var currentTheme = localStorage.getItem("theme") || "light";
   document.documentElement.setAttribute("data-theme", currentTheme);
   updateThemeIcon(currentTheme);
@@ -151,8 +132,6 @@ window.onload = function () {
     var icon = themeToggle.querySelector(".theme-icon");
     icon.textContent = theme === "dark" ? "☀️" : "🌙";
   }
-
-  // Smooth video scrubbing (extra feature)
   var video = document.getElementById("story-video");
   if (video) {
     var aboutSection = document.querySelector(".about-section");
@@ -162,21 +141,16 @@ window.onload = function () {
       aboutSection.addEventListener("wheel", function (e) {
         if (video.duration) {
           e.preventDefault();
-
-          // Frame-by-frame control (assuming 30fps)
           var estimatedFrameRate = 30;
           var totalFrames = video.duration * estimatedFrameRate;
           var timePerFrame = video.duration / totalFrames;
           var timeChange = e.deltaY > 0 ? timePerFrame : -timePerFrame;
-
           currentTime += timeChange;
           currentTime = Math.max(0, Math.min(video.duration, currentTime));
-
           video.currentTime = currentTime;
         }
       });
 
-      // Initialize
       video.addEventListener("loadedmetadata", function () {
         currentTime = 0;
         video.currentTime = 0;

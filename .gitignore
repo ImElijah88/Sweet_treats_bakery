@@ -1,29 +1,6 @@
-# Database credentials
-config.php
-
 # User uploaded files
 uploads/
-
-# Development notes (not for school)
-credentials.txt
-BUGS_AND_IMPROVEMENTS.md
-gemini.md
-UPDATES.md
-test_cases.txt
-
-# Backup folder
-../sweet_treats_website copy/
-
-# Temporary files
-*.tmp
-*.log
 
 # OS files
 .DS_Store
 Thumbs.db
-
-# IDE files
-.vscode/
-.idea/
-*.swp
-*.swo

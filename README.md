@@ -1,70 +1,48 @@
-# Sweet Treats Bakery Website
+Sweet Treats Bakery Website
 
-Welcome to the Sweet Treats Bakery website! This is a full-featured bakery management system built with PHP and MySQL. It's designed to be a one-stop shop for both customers and administrators, with a user-friendly interface and a robust set of features.
+This is my bakery website project for school. It's a website where customers can browse the menu and leave reviews, and admins can manage everything from the backend.
 
-## Features
+What it does:
+- Users can register and login
+- Browse the menu and search for items
+- Leave reviews and ratings
+- Admin can add/edit/delete menu items
+- Stock tracking (shows if items are in stock or low stock)
+- Works on mobile and desktop
 
-This project is packed with features to help you manage your bakery and interact with your customers:
+What I used:
+- PHP for backend
+- MySQL database
+- HTML/CSS for the pages
+- JavaScript for interactive stuff
 
-*   **User-friendly interface:** A clean and intuitive design that's easy to navigate.
-*   **User registration and login:** Customers can create an account to save their preferences and track their orders.
-*   **Browse the menu:** A beautiful and responsive menu with a search function to help customers find their favorite treats.
-*   **Submit reviews and ratings:** Customers can leave feedback and rate your products to help you improve your offerings.
-*   **Admin dashboard:** A powerful admin dashboard to manage your menu, track your stock, and respond to customer feedback.
-*   **Stock tracking:** Keep track of your inventory with automatic stock status updates (in stock, low stock, and out of stock).
-*   **Responsive design:** The website is fully responsive and looks great on all devices, from desktops to mobile phones.
+How to run it:
+1. Download or clone this project
+2. Put it in your htdocs folder (if using XAMPP)
+3. Open phpMyAdmin and import the sweet_treats_db.sql file
+4. Make sure the database name in config.php matches (should be sweet_treats_db)
+5. Go to http://localhost/sweet_treats_website/ in your browser
 
-## Technologies
+How to use:
 
-This project is built with a combination of modern and classic web technologies:
+There's two types of users:
 
-*   **PHP:** The backbone of the application, handling all the server-side logic.
-*   **MySQL:** The database of choice, storing all the data for the application.
-*   **HTML/CSS:** The building blocks of the user interface, with a clean and modern design.
-*   **JavaScript:** Used to add interactivity and a better user experience.
+Customers can browse the menu, leave reviews, and manage their profile.
 
-## Installation
+Admin can manage the menu items, update stock, and reply to customer feedback.
 
-To get started with the Sweet Treats Bakery website, you'll need to have a web server with PHP and MySQL installed (like XAMPP or WAMP).
+To login as admin use:
+- Username: admin
+- Password: admin123
 
-1.  **Clone the repository:**
-    ```
-    git clone https://github.com/your-username/sweet-treats-bakery.git
-    ```
-2.  **Copy the files:** Copy the files to your web server's root directory (e.g., `htdocs` in XAMPP).
-3.  **Create the config file:** Create a `config.php` file from the `config.example.php` template and update it with your database credentials.
-4.  **Import the database:** Import the `sweet_treats_db.sql` file into your MySQL database.
-5.  **Access the website:** You can now access the website at `http://localhost/sweet-treats-bakery/`.
+Files:
 
-## Usage
-
-The Sweet Treats Bakery website has two user roles:
-
-*   **Customer:** Customers can browse the menu, leave reviews, and manage their profile.
-*   **Admin:** The admin can manage the menu, track stock, and respond to customer feedback.
-
-The default admin login is:
-
-*   **Username:** `admin`
-*   **Password:** `admin123`
-
-## Project Structure
-
-The project is organized into the following directories and files:
-
-```
-├── css/style.css           # The main stylesheet for the website
-├── js/script.js            # The main JavaScript file for the website
-├── images/                 # All the images for the website
-├── index.php               # The login page
-├── home.php                # The home page
-├── menu.php                # The menu page
-├── feedback.php            # The customer feedback page
-├── admin_dashboard.php     # The admin dashboard
-├── manage_menu.php         # The menu management page
-└── sweet_treats_db.sql     # The database schema
-```
-
-## Notes
-
-This project was originally created as a school project to demonstrate web development concepts like database operations, session management, and responsive design. It has since been improved and expanded to be a more complete and robust application.
+Main files in the project:
+- index.php - landing page
+- home.php - main home page after login
+- menu.php - shows all the bakery items
+- feedback.php - customer reviews page
+- admin_dashboard.php - admin control panel
+- manage_menu.php - where admin edits menu items
+- config.php - database connection
+- sweet_treats_db.sql - database file to import

@@ -261,17 +261,14 @@ $result = mysqli_query($conn, $query);
                                 </span>
                             </div>
                             
-                            <form method="POST" class="update-stock-form">
-                                <input type="hidden" name="item_id" value="<?php echo $row['id']; ?>">
-                                <div>
-                                    <input type="number" name="new_quantity" value="<?php echo $row['quantity']; ?>" min="0">
-                                    <button type="submit" name="update_stock" class="btn btn-update">Update</button>
-                                </div>
-                            </form>
-                            
-                            <div style="display: flex; gap: 5px;">
-                                <a href="?edit=<?php echo $row['id']; ?>" class="btn btn-update" style="flex: 1; text-align: center;">✏️ Edit</a>
-                                <a href="?delete=<?php echo $row['id']; ?>" onclick="return confirm('Delete?')" class="btn btn-delete" style="flex: 1;">🗑️</a>
+                            <div class="admin-actions-container">
+                                <form method="POST" class="inline-stock-form">
+                                    <input type="hidden" name="item_id" value="<?php echo $row['id']; ?>">
+                                    <input type="number" name="new_quantity" value="<?php echo $row['quantity']; ?>" min="0" class="stock-input">
+                                    <button type="submit" name="update_stock" class="btn btn-update">Update Stock</button>
+                                </form>
+                                <a href="?edit=<?php echo $row['id']; ?>" class="btn btn-update">Edit</a>
+                                <a href="?delete=<?php echo $row['id']; ?>" onclick="return confirm('Delete?')" class="btn btn-delete">Delete</a>
                             </div>
                         </div>
                     </div>

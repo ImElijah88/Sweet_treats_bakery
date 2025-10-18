@@ -25,7 +25,7 @@ $is_logged_in = isset($_SESSION['user_logged_in']) || isset($_SESSION['admin_log
 <body data-logged-in="<?php echo $is_logged_in ? 'true' : 'false'; ?>" data-is-admin="<?php echo $is_admin ? 'true' : 'false'; ?>" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/sweet_bakery.webp'); background-size: cover; background-position: center; background-attachment: fixed;">
     <header>
         <h1>Sweet Treats Bakery</h1>
-        <p>Birmingham's Finest Traditional Bakes Since 1985</p>
+        <p>Birmingham's Finest Traditional Bakes Since 1885</p>
     </header>
     
     <div class="container">

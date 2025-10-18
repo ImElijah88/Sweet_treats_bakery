@@ -957,39 +957,37 @@ select:focus {
     margin-bottom: 30px;
 }
 
-.update-stock-form {
-    margin-top: auto;
-    padding-top: 10px;
-    height: 50px;
+.admin-actions-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 8px;
+    margin-top: 15px;
 }
 
-.update-stock-form div {
-    display: flex;
-    gap: 10px;
-    align-items: center;
+.inline-stock-form {
+    display: contents;
 }
 
-.update-stock-form input {
-    width: 80px;
-    padding: 5px;
+.stock-input {
+    width: 100%;
+    padding: 8px;
+    text-align: center;
+}
+
+.admin-actions-container .btn {
+    padding: 8px;
+    font-size: 14px;
+    text-align: center;
 }
 
 .btn-update {
     background-color: var(--success-color);
-    padding: 5px 10px;
-    font-size: 12px;
 }
 
 .btn-delete {
     background-color: var(--error-color);
     color: white;
-    padding: 8px 15px;
     text-decoration: none;
-    border-radius: 5px;
-    display: block;
-    width: 100%;
-    text-align: center;
-    margin-top: 10px;
 }
 
 .no-items {
