@@ -128,10 +128,15 @@ if (isset($_POST['update_stock'])) {
     
     $query = "UPDATE menu_items SET quantity = '$new_quantity', stock_status = '$stock_status' WHERE id = '$item_id'";
     if (mysqli_query($conn, $query)) {
-        $success = 'Stock updated successfully!';
+        header('Location: manage_menu.php?stock_updated=1');
+        exit();
     } else {
         $error = 'Error updating stock.';
     }
+}
+
+if (isset($_GET['stock_updated'])) {
+    $success = 'Stock updated successfully!';
 }
 
 // Delete menu item

@@ -7,7 +7,7 @@ if (isset($_GET['search'])) {
     $search = $_GET['search'];
 }
 
-$query = "SELECT * FROM menu_items WHERE item_name LIKE '%$search%' ORDER BY stock_status ASC, id DESC";
+$query = "SELECT * FROM menu_items WHERE item_name LIKE '%$search%' OR description LIKE '%$search%' ORDER BY stock_status ASC, id DESC";
 $result = mysqli_query($conn, $query);
 
 $user_name = isset($_SESSION['full_name']) ? $_SESSION['full_name'] : null;
